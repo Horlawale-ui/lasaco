@@ -1,0 +1,149 @@
+.logopic img{
+    width: 150px;
+}
+.hero-bg, .cards {
+    display: flex;
+    padding: 0.2rem calc((100vw - 1150px) / 2);
+    color: #2f4858;
+}
+
+.hero-bg {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 70vh;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.hero-details {
+    color: #000;
+    width: 35%;
+    font-size: 30px;
+}
+
+.hero-details h1 {
+    font-size: 50px;
+    line-height: 45px;
+}
+
+.app-btns .btn:not(:last-child) {
+    margin-right: 0.5rem;
+}
+.app-btns .btn {
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+.hero-details .btn {
+    margin-top: 1rem;
+    animation: slideIn 3s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    outline: none;
+    border-radius: 30px;
+    transition: all 0.4s;
+    z-index: 1;
+}
+
+.icons {
+    font-size: 30px;
+    margin-right: 6px;
+}
+
+.dis-flex {
+    display: flex;
+    align-items: center;
+}
+
+.hero-details p {
+    font-size: 25px;
+}
+
+@media only screen and (min-width: 450px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+.cards {
+    display: grid;
+    grid-gap: 2rem;
+}
+
+.cards img {
+    width: 60px;
+    height: 60px;
+    margin-top: -40px;
+    margin-bottom: 1rem;
+    visibility: visible;
+}
+
+.test h1{
+    color: black;
+    
+}
+
+/* FORM */
+
+.login {
+    max-width: 400px;
+    margin: 10% auto;
+    color: #2f4858;
+    /* transform: translateY(-30%); */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+.login input {
+    width: 250px;
+    padding: 8px 15px;
+    margin-top: 8px;
+    border: 1px solid #000;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.user-label, .pass-label {
+    margin: 8px;
+}
+
+.login .form-submit-btn {
+    margin-top: 2rem;
+    background-color: #4CAEE3;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Question Card */
+
+.questionCard{
+    display: flex;
+    max-width: 1000px;
+    margin: 10px auto 30px;
+    flex-direction: column;
+    box-shadow: 4px 4px 8px 2px rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.question{
+    font-size: 20px;
+
+}
