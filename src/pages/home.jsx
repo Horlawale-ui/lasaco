@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
-import background from "../../hero-bg-4.png";
-import Logo from "../../mission.svg";
+import background from "../assets/hero-bg-4.png";
+import Logo from "../assets/mission.svg";
 
 const Home = () => {
     const NavLink = styled(Link)`
