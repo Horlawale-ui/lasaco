@@ -29,7 +29,7 @@ return (
             </NavLink>
 
             <NavBtn>
-                <NavLink className="NavBtnLink"  to='/quiz'>Get Started</NavLink>
+                <NavLink className="NavBtnLink"  to='/signin'>Get Started</NavLink>
             </NavBtn>
             {/* Second Nav */}
             {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}

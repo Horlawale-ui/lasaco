@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, signInWithEmailAndPassword, signInWithGoogle } from "../services/auth/firebase";
+import { auth, signInWithEmailAndPassword } from "../services/auth/firebase"; // remove siginInWithGoogle
 import { useAuthState } from "react-firebase-hooks/auth";
 
-const Quiz = () => {
+const SignIn = () => {
 	const [email, setEmail] = useState("");
   	const [password, setPassword] = useState("");
-  	const [user, loading, error] = useAuthState(auth);
+  	const [user, loading ] = useAuthState(auth);  // remove error
 	 const navigate = useNavigate();
 	 
 	 useEffect(() => {
@@ -16,7 +16,10 @@ const Quiz = () => {
 		  return;
 		}
 		if (user) navigate('questions');
-	  }, [user, loading]);
+	  }, [user, loading, navigate]);
+
+
+
 return (
 	<div className="log">
 		<form className='login' action=''>
@@ -31,19 +34,10 @@ return (
 				<input  type="password" className='pass' id='pass' value={password} onChange={(e) => setPassword(e.target.value)}  placeholder='Enter your Password'/>
 			</div>
 			<button className='form-submit-btn'onClick={() => signInWithEmailAndPassword(email, password)}> Login </button>
-			{/* <button className="login__btn login__google" onClick={signInWithGoogle}>
-          Login with Google
-        </button> */}
-		 {/* <div>
-          <Link to="/reset">Forgot Password</Link>
-        </div>
-        <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
-        </div> */}
 		</form>
 	</div>
 );
 };
 
 
-export default Quiz;
+export default SignIn;
