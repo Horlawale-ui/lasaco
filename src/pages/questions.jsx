@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import { auth, db, logout } from "./auth/firebase";
+import { auth, db, logout } from "../services/auth/firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 
 const Questions = () => {

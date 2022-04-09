@@ -7,7 +7,7 @@ Bars,
 NavMenu,
 NavBtn,
 } from './NavbarElement';
-import NavLogo from '../asset/Lasaco_logo.png';
+import NavLogo from '../../assets/Lasaco_logo.png';
 
 const Navbar = () => {
 return (

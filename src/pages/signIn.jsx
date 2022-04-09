@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, signInWithEmailAndPassword, signInWithGoogle } from "./auth/firebase";
+import { auth, signInWithEmailAndPassword, signInWithGoogle } from "../services/auth/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 const Quiz = () => {
@@ -9,6 +9,7 @@ const Quiz = () => {
   	const [password, setPassword] = useState("");
   	const [user, loading, error] = useAuthState(auth);
 	 const navigate = useNavigate();
+	 
 	 useEffect(() => {
 		if (loading) {
 		  // maybe trigger a loading screen

@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Navbar from './Component/Navbar/nav';
+import Navbar from './component/navbar/nav';
 import { BrowserRouter as Router,  Route, Routes } from 'react-router-dom';
-import Home from './Component/Pages/home';
-import Questions from './Component/Pages/questions';
-import Quiz from './Component/Pages/quiz';
+import Home from './pages/home';
+import Questions from './pages/questions';
+import Quiz from './pages/signIn';
 
 function App() {
 return (
