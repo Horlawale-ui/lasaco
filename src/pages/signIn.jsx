@@ -5,8 +5,8 @@ import { auth, signInWithEmailAndPassword } from "../services/auth/firebase"; //
 import { useAuthState } from "react-firebase-hooks/auth";
 
 const SignIn = () => {
-	const [email, setEmail] = useState("");
-  	const [password, setPassword] = useState("");
+	const [email, setEmail] = useState("testuser@gmail.com");
+  	const [password, setPassword] = useState("nomorepain1");
   	const [user, loading ] = useAuthState(auth);  // remove error
 	 const navigate = useNavigate();
 	 
@@ -15,7 +15,7 @@ const SignIn = () => {
 		  // maybe trigger a loading screen
 		  return;
 		}
-		if (user) navigate('questions');
+		if (user) navigate('/questions');
 	  }, [user, loading, navigate]);
 
 

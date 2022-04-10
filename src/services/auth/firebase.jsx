@@ -15,13 +15,13 @@ import {
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBtBXwtcF7KnPTYXjd943BauzAFRhXZIMg",
-  authDomain: "lasaco-assess.firebaseapp.com",
-  projectId: "lasaco-assess",
-  storageBucket: "lasaco-assess.appspot.com",
-  messagingSenderId: "33803041271",
-  appId: "1:33803041271:web:65f9159cf78a36578f56f2",
-  measurementId: "G-CL0HGV3CTR"
+  apiKey: "AIzaSyDDVaXzcqdned-l82Bt3w2HTEPXP1KjYIg",
+  authDomain: "lasaco-52758.firebaseapp.com",
+  projectId: "lasaco-52758",
+  storageBucket: "lasaco-52758.appspot.com",
+  messagingSenderId: "476283857482",
+  appId: "1:476283857482:web:b1d916b392401fd54854b3",
+  measurementId: "G-XJMMF72CL2"
 };
 
 // Initialize Firebase

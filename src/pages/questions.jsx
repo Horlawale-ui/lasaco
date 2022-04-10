@@ -69,6 +69,9 @@ const Questions = () => {
 								)}
 							)}
 					</span>
+
+					<button onClick={logout} >Sign out</button>
+					
 					</div>
 				)})}
 		</div>

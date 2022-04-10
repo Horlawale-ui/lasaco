@@ -1,29 +1,26 @@
 import React from 'react';
 import './App.css';
 import Navbar from './component/navbar/nav';
-import { BrowserRouter as Router,  Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router,  Route, Routes, Switch } from 'react-router-dom';
 import Home from './pages/home';
 import Questions from './pages/questions';
 import SignIn from './pages/signIn';
+import PrivateRoute from './services/routes/PrivateRoute';
 // import Login from './pages/login'
 
 
 function App() {
 return (
-	<Router>
     <div className="App">
       <Navbar />
       <div className="content">
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/signin' element={<SignIn />} />
-          {/* <Route path='/login' element={<Login />} /> */}
-
-          <Route exact path="/questions" element={<Questions />} />
-        </Routes>
+        <Router>
+            <Route path='/' component={ Home } />
+            {/* <Route path='/signin' component={<SignIn />} />
+            <PrivateRoute exact path="/questions" component={<Questions />} /> */}
+        </Router>
       </div>
     </div>
-	</Router>
 );
 }
 
