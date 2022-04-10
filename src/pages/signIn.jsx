@@ -1,39 +1,58 @@
-import React from 'react';
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { auth, signInWithEmailAndPassword } from "../services/auth/firebase"; // remove siginInWithGoogle
-import { useAuthState } from "react-firebase-hooks/auth";
+import React, { useEffect, useState, useCallback, useContext } from "react";
 
-const SignIn = () => {
-	const [email, setEmail] = useState("");
-  	const [password, setPassword] = useState("");
-  	const [user, loading ] = useAuthState(auth);  // remove error
-	 const navigate = useNavigate();
-	 
-	 useEffect(() => {
-		if (loading) {
-		  // maybe trigger a loading screen
-		  return;
-		}
-		if (user) navigate('questions');
-	  }, [user, loading, navigate]);
+import { Redirect } from "react-router";
+import { logInWithEmailAndPassword } from "../services/auth/firebase"; // remove siginInWithGoogle
+import { AuthContext } from '../context/AuthProvider'
+
+const SignIn = ({ history }) => {
+	const [email, setEmail] = useState("realuser@gmail.com");
+  	const [password, setPassword] = useState("sexyuser1");
+	const [errMsg, setErrMsg] = useState('');    // Trying to collect error message here so that I can render it when they log in. 
+	const [loading, setLoading] = useState(false);
+
+
+
+	const handleSubmit = useCallback(
+		async event => {
+		  event.preventDefault();
+		  setLoading(true)
+		  try {
+			logInWithEmailAndPassword(email, password);
+			history.push('/questions')
+			setLoading(false)
+
+		  } catch (error) {
+			  alert(error)
+		  }
+		},
+		[history]
+	);
+
+
+	const { currentUser } = useContext(AuthContext);  // If the user is currently logged in. There won't be any need to enter username and password			
+
+	if (currentUser) {
+	  return <Redirect to="/questions" />;
+	}
 
 
 
 return (
+	
 	<div className="log">
-		<form className='login' action=''>
+		{errMsg ? errMsg : null}
+		<form className='login' onSubmit={handleSubmit}>
 			<h1> Log In</h1>
 
 			<div className='user-label'>
-				<label for='user'> USERNAME </label><br/>
+				<label> USERNAME </label><br/>
 				<input  type='text'  className='user' id='user'  value={email}  onChange={(e) => setEmail(e.target.value)}placeholder='Enter Your Username or Gmail' required />
 			</div>
 			<div className='password-label'>
-				<label for='pass'> PASSWORD </label><br/>
+				<label> PASSWORD </label><br/>
 				<input  type="password" className='pass' id='pass' value={password} onChange={(e) => setPassword(e.target.value)}  placeholder='Enter your Password'/>
 			</div>
-			<button className='form-submit-btn'onClick={() => signInWithEmailAndPassword(email, password)}> Login </button>
+			<button type='submit' className='form-submit-btn'> {loading? "loading..." : "Sign in"} </button>
 		</form>
 	</div>
 );
