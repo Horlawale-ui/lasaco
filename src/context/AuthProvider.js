@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   if(pending){
-    return <>Loading...</>
+    return <>Loading...</>  // See if you can add a loading page instead
   }
 
   return (

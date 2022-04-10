@@ -18,13 +18,13 @@ return (
         <img src={NavLogo} alt="Nav logo" />
         </Logo>
 		<NavMenu>
-            <NavLink to='/' activeStyle>
+            <NavLink to='/' >
                 Home
             </NavLink>
-            <NavLink to='/about' activeStyle>
+            <NavLink to='/about' >
                 About
             </NavLink>
-            <NavLink to='/team' activeStyle>
+            <NavLink to='/team' >
                 Teams
             </NavLink>
 
