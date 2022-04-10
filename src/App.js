@@ -6,20 +6,21 @@ import Home from './pages/home';
 import Questions from './pages/questions';
 import SignIn from './pages/signIn';
 import PrivateRoute from './services/routes/PrivateRoute';
-// import Login from './pages/login'
+import Login from './pages/login'
 
 
 function App() {
 return (
     <div className="App">
-      <Navbar />
-      <div className="content">
-        <Router>
-            <Route path='/' component={ Home } />
-            {/* <Route path='/signin' component={<SignIn />} />
-            <PrivateRoute exact path="/questions" component={<Questions />} /> */}
-        </Router>
-      </div>
+      <Router>
+        <Navbar />
+        <div className="content">
+              <Route exact path='/' component={ Home } />
+              <Route exact path='/' component={ Login } />
+              <Route exact path='/signin' component={ SignIn } />
+              <PrivateRoute exact path="/questions" component={ Questions } />
+        </div>
+      </Router>
     </div>
 );
 }

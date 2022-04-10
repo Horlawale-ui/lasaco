@@ -1,22 +1,23 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { auth, signInWithEmailAndPassword } from "../services/auth/firebase"; // remove siginInWithGoogle
-import { useAuthState } from "react-firebase-hooks/auth";
 
 const SignIn = () => {
 	const [email, setEmail] = useState("testuser@gmail.com");
   	const [password, setPassword] = useState("nomorepain1");
-  	const [user, loading ] = useAuthState(auth);  // remove error
-	 const navigate = useNavigate();
+
+
+
+  	// const [user, loading ] = useAuthState(auth);  // remove error
+	//  const navigate = useNavigate();
 	 
-	 useEffect(() => {
-		if (loading) {
-		  // maybe trigger a loading screen
-		  return;
-		}
-		if (user) navigate('/questions');
-	  }, [user, loading, navigate]);
+	//  useEffect(() => {
+	// 	if (loading) {
+	// 	  // maybe trigger a loading screen
+	// 	  return;
+	// 	}
+	// 	if (user) <Redirect to='/questions' />;
+	//   }, [user, loading, navigate]);
 
 
 

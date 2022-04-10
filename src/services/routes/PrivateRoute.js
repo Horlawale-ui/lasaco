@@ -1,6 +1,6 @@
 
 import React, { useContext } from "react";
-import { Route, Navigate } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 
 const PrivateRoute = ({ component: RouteComponent, ...rest }) => {
@@ -12,7 +12,7 @@ const PrivateRoute = ({ component: RouteComponent, ...rest }) => {
         !!currentUser ? (
           <RouteComponent {...routeProps} />
         ) : (
-          <Navigate to={"/"} />
+          <Redirect to={"/"} />
         )
       }
     />

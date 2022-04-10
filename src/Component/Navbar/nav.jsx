@@ -21,7 +21,7 @@ return (
             <NavLink to='/' activeStyle>
                 Home
             </NavLink>
-            <NavLink to='/abouts' activeStyle>
+            <NavLink to='/about' activeStyle>
                 About
             </NavLink>
             <NavLink to='/team' activeStyle>
@@ -31,8 +31,6 @@ return (
             <NavBtn>
                 <NavLink className="NavBtnLink"  to='/signin'>Get Started</NavLink>
             </NavBtn>
-            {/* Second Nav */}
-            {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
 		</NavMenu>
 	</Nav>
 	</>
