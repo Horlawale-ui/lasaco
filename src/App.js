@@ -5,6 +5,8 @@ import { BrowserRouter as Router,  Route, Routes } from 'react-router-dom';
 import Home from './pages/home';
 import Questions from './pages/questions';
 import SignIn from './pages/signIn';
+// import Login from './pages/login'
+
 
 function App() {
 return (
@@ -15,6 +17,8 @@ return (
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/signin' element={<SignIn />} />
+          {/* <Route path='/login' element={<Login />} /> */}
+
           <Route exact path="/questions" element={<Questions />} />
         </Routes>
       </div>
